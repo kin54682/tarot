@@ -138,17 +138,15 @@
             const today = new Date();
             const nextYear = new Date(today);
             nextYear.setFullYear(today.getFullYear() + 1);
-            
+    
             const formatDate = (date) => {
                 return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
             };
-            
+    
             const dateRange = `${formatDate(today)} ~ ${formatDate(nextYear)}`;
             document.getElementById('date-range').textContent = dateRange;
         }
-
-        window.onload = function() {
-            updateDateRange();
-        };
+    
+        document.addEventListener('DOMContentLoaded', updateDateRange);
     </script>
 </body></html>
