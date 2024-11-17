@@ -1,0 +1,608 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: url(./images/wrIoFTshOM.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #f4f4f4;
+}
+/* nevbar導覽 */
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    background: rgba(75, 23, 23, 0.6);
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-height: 10vh;
+    line-height: 100px;
+    /* background: linear-gradient(rgba(32, 2, 2, 0.6), 0.5turn,transparent); */
+    background: linear-gradient(to top, rgb(32, 2, 2,0.8), rgba(32, 2, 2, 0.2));
+    z-index: 100;
+}
+
+.nav-logo p{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    position: relative;
+    left:150px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-menu ul{
+    display: flex;
+}
+
+.nav-menu ul li{
+    list-style-type: none;
+}
+
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+
+.link:hover, .link.active:hover{
+    border-bottom: 2px solid #fff;
+}
+.link.active {
+    border-bottom: none; 
+}
+
+.nav-button .btn{
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+
+#registerBtn{
+    margin-left: 15px;
+}
+
+.btn.white-btn{
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.btn.white-btn:hover{
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.nav-menu-btn{
+    display: none;
+}
+
+.btn.white-btn a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+.nav-logo a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-icon{
+    display: flex;
+    align-items: center;
+    position: relative;
+    right:150px;
+}
+.nav-icon a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-icon i{
+    margin-right: 20px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 400;
+    transform: all .42s ease;
+    line-height: 1;
+}
+
+.nav-icon i:hover{
+    transform: scale(1.1);
+    color:#EE1C47;
+}
+#menu-icon{
+    font-size: 35px;
+    color: #fff;
+    z-index: 10001;
+    cursor: pointer;
+    line-height: 1; 
+    margin-right: 20px; 
+    display: flex;
+    align-items: center;
+}
+
+/* 5個大圖 */
+@import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
+.container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1em;
+    width: 100%;
+    max-width: 1440px;
+    height: 650px;
+    font-family: "Figtree", sans-serif;
+    transition: all 400ms;
+    margin: 15px auto 0;  
+}
+
+.box {
+    position: relative;
+    background: var(--img) center center;
+    background-size: cover;
+    transition: all 400ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box::after {
+    content: attr(data-text);
+    position: absolute;
+    bottom: 20px;
+    background: #000;
+    color: #fff;
+    padding: 10px 10px 10px 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all 400ms;
+}
+
+.container:hover .box {
+    filter: grayscale(100%) opacity(24%);
+}
+
+.box:hover::after {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 400ms;
+}
+
+.container .box:hover {
+    filter: grayscale(0%) opacity(100%);
+}
+
+.container:has(.box-1:hover) {
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-2:hover) {
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-3:hover) {
+    grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+}
+
+.container:has(.box-4:hover) {
+    grid-template-columns: 1fr 1fr 1fr 3fr 1fr;
+}
+
+.container:has(.box-5:hover) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 3fr;
+}
+
+.box:nth-child(odd) {
+    transform: translateY(-16px);
+}
+
+.box:nth-child(even) {
+    transform: translateY(-6px);
+}
+/* 商品 */
+.center-text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.center-text h2 {
+    font-size: 2em;
+}
+
+.center-text span {
+    color: #EE1C47;
+}
+
+.trending-product {
+    padding: 50px 0;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px; 
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.product {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1 1 30%; 
+    max-width: 400px;
+    min-width: 250px; 
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.products-text h5 {
+    background: #EE1C47;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.heart-icon {
+    margin-top: 10px;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.rating i {
+    color: gold;
+    margin: 0 2px;
+}
+
+.price {
+    margin-top: 10px;
+}
+
+.price h4 {
+    margin-bottom: 5px;
+}
+
+.button-buy {
+    width: 150px;
+    height: 35px;
+    color: #ffffff;
+    font-size: 15px;
+    background-color: #817a7a;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+}
+
+.btn {
+    position: relative;
+    min-width: 160px;
+    background: transparent;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    color: black; 
+}
+
+
+.btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 52px;
+    height: 100%;
+    border-radius: 50px;
+    background: black;
+    transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background-color: rgba(240, 240, 240, 0.5);
+    z-index: 1;
+}
+
+.btn:hover {
+    color: white; 
+}
+
+.btn:hover:before {
+    background: black;
+    width: 100%;
+}
+
+.buy-p {
+    z-index: 2;
+    position: relative; 
+}
+
+.buy-p:hover {
+    color: #fff;
+}
+/* 頁尾 */
+
+footer{
+    width:100%;
+    background: linear-gradient(to right,#00093c,#2d0b00);
+    color:#fff;
+    padding: 100px 0 30px;
+    border-top-right-radius: 125px;
+    font-size: 17px;
+    line-height: 20px;
+    position: relative; 
+    bottom: 0;
+}
+
+.row{
+    width:85%;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.col{
+    flex-basis: 25%;
+    padding:10px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 70px; 
+}
+
+.logo {
+    height:60%; 
+    font-size: 25px;
+}
+
+.logo_p{
+    position: relative;
+    top: -25px;
+    font-size: 15px;
+}
+
+.col:nth-child(2), .col:nth-child(3){
+    flex-basis: 10%;
+}
+
+.logo{
+    width:80px;
+    margin-bottom: 30px;
+}
+
+
+.col h3{
+    width:fit-content;
+    margin-bottom:40px;
+    position:relative;
+}
+
+.email-id{
+    width:fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.col ul li{
+    list-style: none;
+    margin-bottom:12px;
+}
+
+.col ul li a{
+    text-decoration: none;
+    color:#fff;
+}
+
+.email-div{
+    padding-bottom: 15px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+    
+}
+
+.email-div .bx {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.email-div input{
+    width:100%;
+    background: transparent;
+    color:#ccc;
+    border: 0;
+    outline: none;
+}
+
+.email-div button{
+    background: transparent;
+    border:0;
+    outline: none;
+    cursor: pointer;
+}
+
+.email-div button .bx{
+    font-size: 16px;
+    color:#ccc;
+}
+
+.footer-icons .bx{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #000;
+    background: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.hr{
+    width: 90%;
+    border:0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+.copyright{
+    background: linear-gradient(to right,#00093c,#2d0b00);
+    text-align: center;
+    color: #fff;
+}
+
+.underline {
+    width: 100%;
+    height: 5px;
+    background: #767676;
+    border-radius: 3px;
+    position: relative;
+    top: 25px;
+    left: 0;
+    overflow: hidden;
+}
+
+.underline span {
+    width: 15px;
+    height: 100%;
+    background: #fff;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: -20px; 
+    animation: moving 2s linear infinite;
+}
+
+
+/* 漢堡 */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    width: 300px;
+    top: 40px; 
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.dropdown-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu ul li {
+    padding: 8px 0px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.dropdown-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: background-color 0.3s;
+    border-radius: 3px;
+    padding: 8px 20px;
+}
+
+.dropdown-menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 3px;
+}
+
+/* 後台 */
+.hidden{
+    display: none;
+}
+
+
+@keyframes moving {
+    0% {
+        left: -20px;
+    }
+    50% {
+        left: calc(100% - 15px);
+    }
+    100% {
+        left: -20px;
+    }
+}
+
+@media (max-width: 960px){
+    footer{
+        bottom: unset;
+    }
+    .col{
+        flex-basis: 100%;
+    }
+    .col:nth-child(2), .col:nth-child(3){
+        flex-basis: 100%;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+    .dropdown-menu {
+        display: block;
+    }
+    .nav-logo p {
+        left:100px;
+    }
+    
+    .nav-icon{
+        left:80px;
+    }
+}
+
+
